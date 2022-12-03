@@ -16,12 +16,11 @@ class CreateUsersTable extends Migration {
 		Schema::create('users', function(Blueprint $table)
 		{
 			$table->increments('id_user');
+			$table->string('name', 150)->nullable();
 			$table->string('email', 250)->nullable();
 			$table->string('password', 150)->nullable();
-			$table->string('name', 150)->nullable();
 			$table->string('phone', 19)->nullable();
-			$table->text('jwt_token')->nullable();
-			$table->string('google_user_id', 150)->nullable();
+			$table->string('google_id', 150)->nullable();
 			$table->timestamps();
 			$table->softDeletes();
 		});
